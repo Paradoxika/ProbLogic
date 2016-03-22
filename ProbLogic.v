@@ -76,6 +76,9 @@ Definition box (a: action) (p: o) := fun w => forall w1, (r w a w1) -> (p w1).
 (* Modal operator for 'possibly' *)
 Definition dia (a: action) (p: o) := fun w => exists w1, (r w a w1) /\ (p w1).
 
+(* Hybrid logic operator 'at' *)
+Definition At (s: W) (f: o) := fun w: W => (f s).
+
 
 
 (* Modal validity of lifted propositions *)
