@@ -1,0 +1,314 @@
+DIGEST 86b2fe40ededc1a676e539c6cca568cb
+FProbLogic
+R52:68 Coq.QArith.QArith <> <> lib
+ax 130:130 <> i
+ax 172:172 <> W
+def 217:222 <> action
+R228:231 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R232:235 Coq.Init.Datatypes <> list ind
+R237:237 ProbLogic <> W defax
+R227:227 ProbLogic <> W defax
+def 287:287 <> o
+R293:296 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R292:292 ProbLogic <> W defax
+def 342:347 <> mequal
+R364:364 ProbLogic <> A var
+R377:377 ProbLogic <> W defax
+R383:385 Coq.Init.Logic <> :type_scope:x_'='_x not
+R382:382 ProbLogic <> x var
+R386:386 ProbLogic <> y var
+R411:416 ProbLogic <> mequal def
+not 398:398 <> ::x_'m='_x
+def 471:474 <> mnot
+R480:480 ProbLogic <> o def
+R486:486 ProbLogic <> W defax
+R492:494 Coq.Init.Logic <> :type_scope:'~'_x not
+R498:498 Coq.Init.Logic <> :type_scope:'~'_x not
+R495:495 ProbLogic <> p var
+R497:497 ProbLogic <> w var
+R522:525 ProbLogic <> mnot def
+not 510:510 <> ::'m~'_x
+def 578:581 <> mand
+R588:588 ProbLogic <> o def
+R594:594 ProbLogic <> W defax
+R600:600 Coq.Init.Logic <> :type_scope:x_'/\'_x not
+R604:609 Coq.Init.Logic <> :type_scope:x_'/\'_x not
+R613:613 Coq.Init.Logic <> :type_scope:x_'/\'_x not
+R601:601 ProbLogic <> p var
+R603:603 ProbLogic <> w var
+R610:610 ProbLogic <> q var
+R612:612 ProbLogic <> w var
+R639:642 ProbLogic <> mand def
+not 625:625 <> ::x_'m/\'_x
+def 697:699 <> mor
+R706:706 ProbLogic <> o def
+R712:712 ProbLogic <> W defax
+R718:718 Coq.Init.Logic <> :type_scope:x_'\/'_x not
+R722:727 Coq.Init.Logic <> :type_scope:x_'\/'_x not
+R731:731 Coq.Init.Logic <> :type_scope:x_'\/'_x not
+R719:719 ProbLogic <> p var
+R721:721 ProbLogic <> w var
+R728:728 ProbLogic <> q var
+R730:730 ProbLogic <> w var
+R757:759 ProbLogic <> mor def
+not 743:743 <> ::x_'m\/'_x
+def 814:821 <> mimplies
+R828:828 ProbLogic <> o def
+R833:833 ProbLogic <> W defax
+R839:839 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R843:848 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R852:852 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R849:849 ProbLogic <> q var
+R851:851 ProbLogic <> w var
+R840:840 ProbLogic <> p var
+R842:842 ProbLogic <> w var
+R878:885 ProbLogic <> mimplies def
+not 864:864 <> ::x_'m->'_x
+def 940:945 <> mequiv
+R952:952 ProbLogic <> o def
+R957:957 ProbLogic <> W defax
+R963:963 Coq.Init.Logic <> :type_scope:x_'<->'_x not
+R967:973 Coq.Init.Logic <> :type_scope:x_'<->'_x not
+R977:977 Coq.Init.Logic <> :type_scope:x_'<->'_x not
+R964:964 ProbLogic <> p var
+R966:966 ProbLogic <> w var
+R974:974 ProbLogic <> q var
+R976:976 ProbLogic <> w var
+R1004:1009 ProbLogic <> mequiv def
+not 989:989 <> ::x_'m<->'_x
+def 1090:1090 <> A
+R1106:1109 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R1110:1110 ProbLogic <> o def
+R1105:1105 ProbLogic <> t var
+R1116:1116 ProbLogic <> W defax
+R1132:1132 ProbLogic <> p var
+R1136:1136 ProbLogic <> w var
+R1134:1134 ProbLogic <> x var
+R1171:1171 ProbLogic <> A def
+not 1148:1148 <> :type_scope:'mforall'_x_','_x
+R1283:1283 ProbLogic <> A def
+not 1257:1257 <> :type_scope:'mforall'_x_':'_x_','_x
+def 1434:1434 <> E
+R1450:1453 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R1454:1454 ProbLogic <> o def
+R1449:1449 ProbLogic <> t var
+R1460:1460 ProbLogic <> W defax
+R1466:1472 Coq.Init.Logic <> :type_scope:'exists'_x_'..'_x_','_x not
+R1474:1475 Coq.Init.Logic <> :type_scope:'exists'_x_'..'_x_','_x not
+R1476:1476 ProbLogic <> p var
+R1480:1480 ProbLogic <> w var
+R1478:1478 ProbLogic <> x var
+R1514:1514 ProbLogic <> E def
+not 1492:1492 <> :type_scope:'mexists'_x_','_x
+R1626:1626 ProbLogic <> E def
+not 1600:1600 <> :type_scope:'mexists'_x_':'_x_','_x
+def 1775:1779 <> is_in
+R1795:1795 ProbLogic <> A var
+R1802:1805 Coq.Init.Datatypes <> list ind
+R1807:1807 ProbLogic <> A var
+R1819:1819 ProbLogic <> l var
+R1831:1833 Coq.Init.Datatypes <> nil constr
+R1838:1842 Coq.Init.Logic <> False ind
+R1849:1852 Coq.Init.Datatypes <> cons constr
+R1870:1874 Coq.Init.Logic <> :type_scope:x_'\/'_x not
+R1887:1887 Coq.Init.Logic <> :type_scope:x_'\/'_x not
+R1866:1868 Coq.Init.Logic <> :type_scope:x_'='_x not
+R1865:1865 ProbLogic <> x var
+R1875:1879 ProbLogic <> is_in def
+R1881:1881 ProbLogic <> x var
+def 1952:1952 <> r
+R1958:1958 ProbLogic <> W defax
+R1965:1970 ProbLogic <> action def
+R1978:1978 ProbLogic <> W defax
+R1985:1989 ProbLogic <> is_in def
+R1995:1995 ProbLogic <> a var
+R1997:1997 ProbLogic <> w var
+R1991:1992 ProbLogic <> w1 var
+def 2054:2056 <> box
+R2062:2067 ProbLogic <> action def
+R2074:2074 ProbLogic <> o def
+R2100:2100 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R2109:2114 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R2119:2119 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R2115:2115 ProbLogic <> p var
+R2117:2118 ProbLogic <> w1 var
+R2101:2101 ProbLogic <> r def
+R2107:2108 ProbLogic <> w1 var
+R2105:2105 ProbLogic <> a var
+R2103:2103 ProbLogic <> w var
+def 2170:2172 <> dia
+R2178:2183 ProbLogic <> action def
+R2190:2190 ProbLogic <> o def
+R2205:2211 Coq.Init.Logic <> :type_scope:'exists'_x_'..'_x_','_x not
+R2214:2215 Coq.Init.Logic <> :type_scope:'exists'_x_'..'_x_','_x not
+R2216:2216 Coq.Init.Logic <> :type_scope:x_'/\'_x not
+R2225:2230 Coq.Init.Logic <> :type_scope:x_'/\'_x not
+R2235:2235 Coq.Init.Logic <> :type_scope:x_'/\'_x not
+R2217:2217 ProbLogic <> r def
+R2223:2224 ProbLogic <> w1 var
+R2221:2221 ProbLogic <> a var
+R2219:2219 ProbLogic <> w var
+R2231:2231 ProbLogic <> p var
+R2233:2234 ProbLogic <> w1 var
+def 2296:2296 <> V
+R2302:2302 ProbLogic <> o def
+R2318:2318 ProbLogic <> p var
+R2320:2320 ProbLogic <> w var
+R2344:2344 ProbLogic <> V def
+not 2332:2332 <> ::'['_x_']'
+R2382:2382 ProbLogic <> V def
+R2382:2382 ProbLogic <> V def
+R2618:2620 ProbLogic <> box def
+R2618:2620 ProbLogic <> box def
+R3004:3009 ProbLogic <> mequal def
+R3011:3018 ProbLogic <> mimplies def
+R3020:3023 ProbLogic <> mnot def
+R3025:3027 ProbLogic <> mor def
+R3029:3032 ProbLogic <> mand def
+R3034:3036 ProbLogic <> dia def
+R3038:3040 ProbLogic <> box def
+R3042:3042 ProbLogic <> A def
+R3044:3044 ProbLogic <> E def
+R3046:3046 ProbLogic <> V def
+ax 3101:3103 <> dec
+R3117:3117 ProbLogic <> o def
+R3124:3124 ProbLogic <> W defax
+R3128:3128 Coq.Init.Specif <> :type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3132:3136 Coq.Init.Specif <> :type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3144:3144 Coq.Init.Specif <> :type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3129:3129 ProbLogic <> f var
+R3131:3131 ProbLogic <> w var
+R3137:3139 Coq.Init.Logic <> :type_scope:'~'_x not
+R3143:3143 Coq.Init.Logic <> :type_scope:'~'_x not
+R3140:3140 ProbLogic <> f var
+R3142:3142 ProbLogic <> w var
+ax 3158:3164 <> decProp
+R3183:3183 Coq.Init.Specif <> :type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3185:3189 Coq.Init.Specif <> :type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3192:3192 Coq.Init.Specif <> :type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3184:3184 ProbLogic <> f var
+R3190:3190 Coq.Init.Logic <> :type_scope:'~'_x not
+R3191:3191 ProbLogic <> f var
+def 3207:3209 <> map
+R3231:3234 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R3235:3236 ProbLogic <> T2 var
+R3229:3230 ProbLogic <> T1 var
+R3243:3246 Coq.Init.Datatypes <> list ind
+R3248:3249 ProbLogic <> T1 var
+R3261:3261 ProbLogic <> l var
+R3273:3275 Coq.Init.Datatypes <> nil constr
+R3280:3282 Coq.Init.Datatypes <> nil constr
+R3289:3292 Coq.Init.Datatypes <> cons constr
+R3309:3312 Coq.Init.Datatypes <> cons constr
+R3324:3326 ProbLogic <> map def
+R3328:3328 ProbLogic <> f var
+R3315:3315 ProbLogic <> f var
+def 3352:3360 <> summation
+R3366:3369 Coq.Init.Datatypes <> list ind
+R3371:3371 Coq.QArith.QArith_base <> Q rec
+R3383:3383 ProbLogic <> l var
+R3394:3396 Coq.Init.Datatypes <> nil constr
+R3408:3411 Coq.Init.Datatypes <> cons constr
+R3431:3434 Coq.QArith.QArith_base <> :Q_scope:x_'+'_x not
+R3449:3449 Coq.QArith.QArith_base <> :Q_scope:x_'+'_x not
+R3435:3443 ProbLogic <> summation def
+def 3467:3470 <> prob
+R3476:3476 ProbLogic <> o def
+R3483:3486 Coq.Init.Datatypes <> list ind
+R3488:3493 ProbLogic <> action def
+R3500:3500 ProbLogic <> W defax
+R3512:3512 ProbLogic <> l var
+R3523:3525 Coq.Init.Datatypes <> nil constr
+R3534:3536 ProbLogic <> dec defax
+R3540:3540 ProbLogic <> w var
+R3538:3538 ProbLogic <> f var
+R3562:3565 Coq.Init.Datatypes <> cons constr
+R3578:3578 Coq.QArith.QArith_base <> :Q_scope:x_'/'_x not
+R3614:3618 Coq.QArith.QArith_base <> :Q_scope:x_'/'_x not
+R3649:3650 Coq.QArith.QArith_base <> :Q_scope:x_'/'_x not
+R3579:3587 ProbLogic <> summation def
+R3590:3592 ProbLogic <> map def
+R3611:3611 ProbLogic <> w var
+R3595:3598 ProbLogic <> prob def
+R3600:3600 ProbLogic <> f var
+R3619:3619 Coq.QArith.QArith_base <> :Q_scope:x_'#'_x not
+R3644:3647 Coq.QArith.QArith_base <> :Q_scope:x_'#'_x not
+R3620:3627 Coq.ZArith.BinInt Z of_nat def
+R3630:3635 Coq.Init.Datatypes <> length def
+R3640:3640 ProbLogic <> w var
+def 3671:3678 <> probPred
+R3684:3684 ProbLogic <> o def
+R3691:3694 Coq.Init.Datatypes <> list ind
+R3696:3701 ProbLogic <> action def
+R3712:3712 Coq.QArith.QArith_base <> Q rec
+R3719:3719 ProbLogic <> W defax
+R3725:3725 Coq.Init.Logic <> :type_scope:x_'='_x not
+R3736:3739 Coq.Init.Logic <> :type_scope:x_'='_x not
+R3726:3729 ProbLogic <> prob def
+R3735:3735 ProbLogic <> w var
+R3733:3733 ProbLogic <> l var
+R3731:3731 ProbLogic <> f var
+R3740:3744 ProbLogic <> value var
+prf 3783:3788 <> mp_dia
+R3791:3791 ProbLogic <> ::'['_x_']' not
+R3870:3870 ProbLogic <> ::'['_x_']' not
+R3792:3799 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R3801:3802 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R3803:3810 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R3812:3813 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R3814:3821 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R3823:3824 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R3825:3825 ProbLogic <> ::x_'m->'_x not
+R3833:3838 ProbLogic <> ::x_'m->'_x not
+R3826:3828 ProbLogic <> dia def
+R3839:3839 ProbLogic <> ::x_'m->'_x not
+R3855:3861 ProbLogic <> ::x_'m->'_x not
+R3869:3869 ProbLogic <> ::x_'m->'_x not
+R3840:3842 ProbLogic <> box def
+R3848:3852 ProbLogic <> ::x_'m->'_x not
+R3862:3864 ProbLogic <> dia def
+prf 4041:4055 <> not_dia_box_not
+R4058:4058 ProbLogic <> ::'['_x_']' not
+R4114:4114 ProbLogic <> ::'['_x_']' not
+R4059:4066 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4068:4069 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4070:4077 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4079:4080 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4081:4081 ProbLogic <> ::x_'m->'_x not
+R4094:4100 ProbLogic <> ::x_'m->'_x not
+R4113:4113 ProbLogic <> ::x_'m->'_x not
+R4082:4085 ProbLogic <> ::'m~'_x not
+R4093:4093 ProbLogic <> ::'m~'_x not
+R4086:4088 ProbLogic <> dia def
+R4101:4103 ProbLogic <> box def
+R4108:4110 ProbLogic <> ::'m~'_x not
+prf 4271:4285 <> box_not_not_dia
+R4288:4289 ProbLogic <> ::'['_x_']' not
+R4345:4346 ProbLogic <> ::'['_x_']' not
+R4290:4297 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4299:4300 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4301:4308 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4310:4311 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4312:4312 ProbLogic <> ::x_'m->'_x not
+R4325:4331 ProbLogic <> ::x_'m->'_x not
+R4344:4344 ProbLogic <> ::x_'m->'_x not
+R4313:4315 ProbLogic <> box def
+R4320:4322 ProbLogic <> ::'m~'_x not
+R4332:4335 ProbLogic <> ::'m~'_x not
+R4343:4343 ProbLogic <> ::'m~'_x not
+R4336:4338 ProbLogic <> dia def
+prf 4517:4531 <> dia_not_not_box
+R4534:4535 ProbLogic <> ::'['_x_']' not
+R4591:4592 ProbLogic <> ::'['_x_']' not
+R4536:4543 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4545:4546 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4547:4554 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4556:4557 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4558:4558 ProbLogic <> ::x_'m->'_x not
+R4571:4577 ProbLogic <> ::x_'m->'_x not
+R4590:4590 ProbLogic <> ::x_'m->'_x not
+R4559:4561 ProbLogic <> dia def
+R4566:4568 ProbLogic <> ::'m~'_x not
+R4578:4581 ProbLogic <> ::'m~'_x not
+R4589:4589 ProbLogic <> ::'m~'_x not
+R4582:4584 ProbLogic <> box def
