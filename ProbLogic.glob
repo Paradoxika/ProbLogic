@@ -1,4 +1,4 @@
-DIGEST 2ef6a55cdaa67df39292a790931a96d6
+DIGEST 69c002cf62921cc9873fb8f572b1ca25
 FProbLogic
 R52:68 Coq.QArith.QArith <> <> lib
 ax 130:130 <> i
@@ -248,73 +248,73 @@ R3775:3778 Coq.Init.Datatypes <> list ind
 R3780:3785 ProbLogic <> action def
 R3796:3796 Coq.QArith.QArith_base <> Q rec
 R3803:3803 ProbLogic <> W defax
-R3809:3809 Coq.Init.Logic <> :type_scope:x_'='_x not
-R3820:3823 Coq.Init.Logic <> :type_scope:x_'='_x not
+R3809:3809 Coq.QArith.QArith_base <> :Q_scope:x_'=='_x not
+R3820:3824 Coq.QArith.QArith_base <> :Q_scope:x_'=='_x not
 R3810:3813 ProbLogic <> prob def
 R3819:3819 ProbLogic <> w var
 R3817:3817 ProbLogic <> l var
 R3815:3815 ProbLogic <> f var
-R3824:3828 ProbLogic <> value var
-prf 3867:3872 <> mp_dia
-R3875:3875 ProbLogic <> ::'['_x_']' not
-R3954:3954 ProbLogic <> ::'['_x_']' not
-R3876:3883 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R3885:3886 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R3887:3894 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R3896:3897 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R3898:3905 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R3907:3908 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R3909:3909 ProbLogic <> ::x_'m->'_x not
-R3917:3922 ProbLogic <> ::x_'m->'_x not
-R3910:3912 ProbLogic <> dia def
-R3923:3923 ProbLogic <> ::x_'m->'_x not
-R3939:3945 ProbLogic <> ::x_'m->'_x not
-R3953:3953 ProbLogic <> ::x_'m->'_x not
-R3924:3926 ProbLogic <> box def
-R3932:3936 ProbLogic <> ::x_'m->'_x not
-R3946:3948 ProbLogic <> dia def
-prf 4125:4139 <> not_dia_box_not
-R4142:4142 ProbLogic <> ::'['_x_']' not
-R4198:4198 ProbLogic <> ::'['_x_']' not
-R4143:4150 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R4152:4153 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R4154:4161 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R4163:4164 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R4165:4165 ProbLogic <> ::x_'m->'_x not
-R4178:4184 ProbLogic <> ::x_'m->'_x not
-R4197:4197 ProbLogic <> ::x_'m->'_x not
-R4166:4169 ProbLogic <> ::'m~'_x not
-R4177:4177 ProbLogic <> ::'m~'_x not
-R4170:4172 ProbLogic <> dia def
-R4185:4187 ProbLogic <> box def
-R4192:4194 ProbLogic <> ::'m~'_x not
-prf 4355:4369 <> box_not_not_dia
-R4372:4373 ProbLogic <> ::'['_x_']' not
-R4429:4430 ProbLogic <> ::'['_x_']' not
-R4374:4381 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R4383:4384 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R4385:4392 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R4394:4395 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R4396:4396 ProbLogic <> ::x_'m->'_x not
-R4409:4415 ProbLogic <> ::x_'m->'_x not
-R4428:4428 ProbLogic <> ::x_'m->'_x not
-R4397:4399 ProbLogic <> box def
-R4404:4406 ProbLogic <> ::'m~'_x not
-R4416:4419 ProbLogic <> ::'m~'_x not
-R4427:4427 ProbLogic <> ::'m~'_x not
-R4420:4422 ProbLogic <> dia def
-prf 4601:4615 <> dia_not_not_box
-R4618:4619 ProbLogic <> ::'['_x_']' not
-R4675:4676 ProbLogic <> ::'['_x_']' not
-R4620:4627 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R4629:4630 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R4631:4638 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R4640:4641 ProbLogic <> :type_scope:'mforall'_x_','_x not
-R4642:4642 ProbLogic <> ::x_'m->'_x not
-R4655:4661 ProbLogic <> ::x_'m->'_x not
-R4674:4674 ProbLogic <> ::x_'m->'_x not
-R4643:4645 ProbLogic <> dia def
-R4650:4652 ProbLogic <> ::'m~'_x not
-R4662:4665 ProbLogic <> ::'m~'_x not
-R4673:4673 ProbLogic <> ::'m~'_x not
-R4666:4668 ProbLogic <> box def
+R3825:3829 ProbLogic <> value var
+prf 3868:3873 <> mp_dia
+R3876:3876 ProbLogic <> ::'['_x_']' not
+R3955:3955 ProbLogic <> ::'['_x_']' not
+R3877:3884 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R3886:3887 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R3888:3895 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R3897:3898 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R3899:3906 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R3908:3909 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R3910:3910 ProbLogic <> ::x_'m->'_x not
+R3918:3923 ProbLogic <> ::x_'m->'_x not
+R3911:3913 ProbLogic <> dia def
+R3924:3924 ProbLogic <> ::x_'m->'_x not
+R3940:3946 ProbLogic <> ::x_'m->'_x not
+R3954:3954 ProbLogic <> ::x_'m->'_x not
+R3925:3927 ProbLogic <> box def
+R3933:3937 ProbLogic <> ::x_'m->'_x not
+R3947:3949 ProbLogic <> dia def
+prf 4126:4140 <> not_dia_box_not
+R4143:4143 ProbLogic <> ::'['_x_']' not
+R4199:4199 ProbLogic <> ::'['_x_']' not
+R4144:4151 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4153:4154 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4155:4162 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4164:4165 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4166:4166 ProbLogic <> ::x_'m->'_x not
+R4179:4185 ProbLogic <> ::x_'m->'_x not
+R4198:4198 ProbLogic <> ::x_'m->'_x not
+R4167:4170 ProbLogic <> ::'m~'_x not
+R4178:4178 ProbLogic <> ::'m~'_x not
+R4171:4173 ProbLogic <> dia def
+R4186:4188 ProbLogic <> box def
+R4193:4195 ProbLogic <> ::'m~'_x not
+prf 4356:4370 <> box_not_not_dia
+R4373:4374 ProbLogic <> ::'['_x_']' not
+R4430:4431 ProbLogic <> ::'['_x_']' not
+R4375:4382 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4384:4385 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4386:4393 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4395:4396 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4397:4397 ProbLogic <> ::x_'m->'_x not
+R4410:4416 ProbLogic <> ::x_'m->'_x not
+R4429:4429 ProbLogic <> ::x_'m->'_x not
+R4398:4400 ProbLogic <> box def
+R4405:4407 ProbLogic <> ::'m~'_x not
+R4417:4420 ProbLogic <> ::'m~'_x not
+R4428:4428 ProbLogic <> ::'m~'_x not
+R4421:4423 ProbLogic <> dia def
+prf 4602:4616 <> dia_not_not_box
+R4619:4620 ProbLogic <> ::'['_x_']' not
+R4676:4677 ProbLogic <> ::'['_x_']' not
+R4621:4628 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4630:4631 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4632:4639 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4641:4642 ProbLogic <> :type_scope:'mforall'_x_','_x not
+R4643:4643 ProbLogic <> ::x_'m->'_x not
+R4656:4662 ProbLogic <> ::x_'m->'_x not
+R4675:4675 ProbLogic <> ::x_'m->'_x not
+R4644:4646 ProbLogic <> dia def
+R4651:4653 ProbLogic <> ::'m~'_x not
+R4663:4666 ProbLogic <> ::'m~'_x not
+R4674:4674 ProbLogic <> ::'m~'_x not
+R4667:4669 ProbLogic <> box def

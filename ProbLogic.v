@@ -132,7 +132,7 @@ end.
 
 
 
-Definition probPred (f: o) (l: list action) (value: Q) (w: W) := (prob f l w) = value.
+Definition probPred (f: o) (l: list action) (value: Q) (w: W) := (prob f l w) == value.
 
 
 
