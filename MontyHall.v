@@ -58,6 +58,8 @@ Axiom frame3: [mforall d, (P d) m-> (box open (P d)) ].
 
 Axiom frame4: [mforall d, (C d) m-> (box switch (C d)) ].
 
+Axiom frame5: [mforall d, (C d) m-> (box noswitch (C d)) ].
+
 Axiom victory: [ mforall d, (C d) m-> (P d) m-> Vic ].
 
 Axiom defeat: [ mforall dc, mforall dp, (C dc) m-> (P dp) m-> (m~ (dp m= dc)) m-> (m~ Vic) ].
@@ -73,6 +75,8 @@ Axiom open3: [mexists d, (dia open (O d) )].
 Axiom open4: [mforall d, mforall do, (O do) m-> (m~ (d m= do)) m-> (m~ (O d)) ].
 
 Axiom switch1: forall w, forall do, forall dp, ((O do) w) -> ((P dp) w) -> exists w1, (switch w) = (cons w1 nil) /\ exists dpn, (dpn <> do) /\ (dpn <> dp) /\ (P dpn w1).
+
+Axiom noswitch1: forall w, forall dp, ((P dp) w) -> exists w1, (noswitch w) = (cons w1 nil) /\ (P dp w1).
 
 Lemma prob_after_switch_is_two_thirds: [ (At s0 (probPred Vic (cons hide (cons (pick d1) (cons open (cons switch nil) ) ) ) (2 # 3))) ].
 Proof. mv.
@@ -102,7 +106,6 @@ assert (C d1 w11).
       destruct (open2 w31 d3 d1 H2 H31P) as [w312 [H31Open [d312o [D312_3  [D312_1 H312O]] ] ]].
       rewrite H31Open; simpl.
 
-      (* assert (d312o = d2). *)
       induction d312o.
         exfalso. apply D312_1. reflexivity.
 
@@ -313,7 +316,241 @@ Qed.
 Lemma prob_without_switch_is_one_third: [ (At s0 (probPred Vic (cons hide (cons (pick d1) (cons open (cons noswitch nil) ) ) ) (1 # 3))) ].
 Proof.
 (* Analogous to the proof of the previous lemma *)
-Admitted.
+mv.
+unfold At.
+unfold probPred.
+unfold prob.
+destruct (hide2 s0) as [w1 [w2 [w3 H ]]].
+destruct H as [H [H1C [H2C H3C]]].
+rewrite H. simpl.
+destruct (pick2 w1 d1) as [w11 [H11 H11P]].
+destruct (pick2 w2 d1) as [w21 [H21 H21P]].
+destruct (pick2 w3 d1) as [w31 [H31 H31P]].
+rewrite H11; rewrite H21; rewrite H31; simpl.
+assert (C d1 w11).
+  apply (frame w1 d1 d1 H1C); unfold r; unfold is_in; rewrite H11; left; reflexivity.
+
+  assert (C d2 w21).
+    apply (frame w2 d2 d1 H2C); unfold r; unfold is_in; rewrite H21; left; reflexivity.
+
+    assert (C d3 w31).
+      apply (frame w3 d3 d1 H3C); unfold r; unfold is_in; rewrite H31; left; reflexivity.
+
+      destruct (open1 w11 d1 H0 H11P) as [w112 [w113 [d112o [d113o [H11Open [D112_1 [D113_1 [D112_113 [H112O H113O]]]]] ]]]].
+      rewrite H11Open; simpl.
+      destruct (open2 w21 d2 d1 H1 H21P) as [w213 [H21Open [d213o [D213_2  [D213_1 H213O]] ] ]].
+      rewrite H21Open; simpl.
+      destruct (open2 w31 d3 d1 H2 H31P) as [w312 [H31Open [d312o [D312_3  [D312_1 H312O]] ] ]].
+      rewrite H31Open; simpl.
+
+      induction d312o.
+        exfalso. apply D312_1. reflexivity.
+
+        Focus 2. exfalso. apply D312_3. reflexivity.
+        induction d213o.
+          exfalso. apply D213_1. reflexivity.
+
+          exfalso; apply D213_2; reflexivity.
+          induction d113o.
+            exfalso; apply D113_1; reflexivity.
+
+            induction d112o.
+              exfalso; apply D112_1; reflexivity.
+ 
+              exfalso; apply D112_113; reflexivity.
+              Focus 2.
+              induction d112o.
+                exfalso; apply D112_1; reflexivity.
+
+                assert (P d1 w112).
+                  apply (frame3 w11 d1 H11P); unfold r; unfold is_in; rewrite H11Open; left; reflexivity.
+
+                  destruct (noswitch1 w112 d1 H3) as [w1121 [H1121S H1121P]].
+                  rewrite H1121S; simpl.
+                  assert (P d1 w113).
+                    apply (frame3 w11 d1 H11P); unfold r; unfold is_in; rewrite H11Open; right; left; reflexivity.
+
+                    destruct (noswitch1 w113 d1 H4) as [w1131 [H1131S H1131P]].
+                    rewrite H1131S; simpl.
+                    assert (P d1 w213).
+                      apply (frame3 w21 d1 H21P); unfold r; unfold is_in; rewrite H21Open; left; reflexivity.
+
+                      destruct (noswitch1 w213 d1 H5) as [w2131 [H2131S H2131P]].
+                      rewrite H2131S; simpl.
+                      assert (P d1 w312).
+                        apply (frame3 w31 d1 H31P); unfold r; unfold is_in; rewrite H31Open; left; reflexivity.
+
+                        destruct (noswitch1 w312 d1 H6) as [w3121 [H3121S H3121P]].
+                        rewrite H3121S; simpl.
+                        assert (C d1 w112).
+                          apply (frame2 w11 d1 H0); unfold r; unfold is_in; rewrite H11Open; left; reflexivity.
+
+                          assert (C d1 w1121).
+                            apply (frame5 w112 d1 H7); unfold r; unfold is_in; rewrite H1121S; left; reflexivity.
+
+                            assert (C d1 w113).
+                              apply (frame2 w11 d1 H0); unfold r; unfold is_in; rewrite H11Open; right; left; reflexivity.
+
+                              assert (C d1 w1131).
+                                apply (frame5 w113 d1 H9); unfold r; unfold is_in; rewrite H1131S; left; reflexivity.
+
+                                assert (C d2 w213).
+                                  apply (frame2 w21 d2 H1); unfold r; unfold is_in; rewrite H21Open; left; reflexivity.
+
+                                  assert (C d2 w2131).
+                                    apply (frame5 w213 d2 H12); unfold r; unfold is_in; rewrite H2131S; left; reflexivity.
+
+                                    assert (C d3 w312).
+                                      apply (frame2 w31 d3 H2); unfold r; unfold is_in; rewrite H31Open; left; reflexivity.
+
+                                      assert (C d3 w3121).
+                                        apply (frame5 w312 d3 H14); unfold r; unfold is_in; rewrite H3121S; left; reflexivity.
+
+                                        assert (Vic w1121). apply (victory w1121 d1); [exact H8 | exact H1121P].
+                                        assert (Vic w1131). apply (victory w1131 d1); [exact H10 | exact H1131P].
+                                        assert (~ (Vic w3121)). apply (defeat w3121 d3 d1). exact H15. exact H3121P. unfold mnot. unfold mequal. intro Equal_d3_d1. discriminate Equal_d3_d1.
+                                        assert (~ (Vic w2131)). apply (defeat w2131 d2 d1). exact H13. exact H2131P. unfold mnot. unfold mequal. intro Equal_d2_d1. discriminate Equal_d2_d1.
+                                        destruct (dec Vic w1121). 
+                                          Focus 2. contradiction. 
+
+                                        destruct (dec Vic w1131).
+                                          Focus 2. contradiction.
+
+                                        destruct (dec Vic w2131).
+                                          contradiction. 
+
+                                        destruct (dec Vic w3121).
+                                          contradiction.
+
+                                          reflexivity.
+
+(* Analogous to previous case *)
+
+                assert (P d1 w112).
+                  apply (frame3 w11 d1 H11P); unfold r; unfold is_in; rewrite H11Open; left; reflexivity.
+
+                  destruct (noswitch1 w112 d1 H3) as [w1121 [H1121S H1121P]].
+                  rewrite H1121S; simpl.
+                  assert (P d1 w113).
+                    apply (frame3 w11 d1 H11P); unfold r; unfold is_in; rewrite H11Open; right; left; reflexivity.
+
+                    destruct (noswitch1 w113 d1 H4) as [w1131 [H1131S H1131P]].
+                    rewrite H1131S; simpl.
+                    assert (P d1 w213).
+                      apply (frame3 w21 d1 H21P); unfold r; unfold is_in; rewrite H21Open; left; reflexivity.
+
+                      destruct (noswitch1 w213 d1 H5) as [w2131 [H2131S H2131P]].
+                      rewrite H2131S; simpl.
+                      assert (P d1 w312).
+                        apply (frame3 w31 d1 H31P); unfold r; unfold is_in; rewrite H31Open; left; reflexivity.
+
+                        destruct (noswitch1 w312 d1 H6) as [w3121 [H3121S H3121P]].
+                        rewrite H3121S; simpl.
+                        assert (C d1 w112).
+                          apply (frame2 w11 d1 H0); unfold r; unfold is_in; rewrite H11Open; left; reflexivity.
+
+                          assert (C d1 w1121).
+                            apply (frame5 w112 d1 H7); unfold r; unfold is_in; rewrite H1121S; left; reflexivity.
+
+                            assert (C d1 w113).
+                              apply (frame2 w11 d1 H0); unfold r; unfold is_in; rewrite H11Open; right; left; reflexivity.
+
+                              assert (C d1 w1131).
+                                apply (frame5 w113 d1 H9); unfold r; unfold is_in; rewrite H1131S; left; reflexivity.
+
+                                assert (C d2 w213).
+                                  apply (frame2 w21 d2 H1); unfold r; unfold is_in; rewrite H21Open; left; reflexivity.
+
+                                  assert (C d2 w2131).
+                                    apply (frame5 w213 d2 H12); unfold r; unfold is_in; rewrite H2131S; left; reflexivity.
+
+                                    assert (C d3 w312).
+                                      apply (frame2 w31 d3 H2); unfold r; unfold is_in; rewrite H31Open; left; reflexivity.
+
+                                      assert (C d3 w3121).
+                                        apply (frame5 w312 d3 H14); unfold r; unfold is_in; rewrite H3121S; left; reflexivity.
+
+                                        assert (Vic w1121). apply (victory w1121 d1); [exact H8 | exact H1121P].
+                                        assert (Vic w1131). apply (victory w1131 d1); [exact H10 | exact H1131P].
+                                        assert (~ (Vic w3121)). apply (defeat w3121 d3 d1). exact H15. exact H3121P. unfold mnot. unfold mequal. intro Equal_d3_d1. discriminate Equal_d3_d1.
+                                        assert (~ (Vic w2131)). apply (defeat w2131 d2 d1). exact H13. exact H2131P. unfold mnot. unfold mequal. intro Equal_d2_d1. discriminate Equal_d2_d1.
+                                        destruct (dec Vic w1121). 
+                                          Focus 2. contradiction. 
+
+                                        destruct (dec Vic w1131).
+                                          Focus 2. contradiction.
+
+                                        destruct (dec Vic w2131).
+                                          contradiction. 
+
+                                        destruct (dec Vic w3121).
+                                          contradiction.
+
+                                          reflexivity.
+
+
+                assert (P d1 w112).
+                  apply (frame3 w11 d1 H11P); unfold r; unfold is_in; rewrite H11Open; left; reflexivity.
+
+                  destruct (noswitch1 w112 d1 H3) as [w1121 [H1121S H1121P]].
+                  rewrite H1121S; simpl.
+                  assert (P d1 w113).
+                    apply (frame3 w11 d1 H11P); unfold r; unfold is_in; rewrite H11Open; right; left; reflexivity.
+
+                    destruct (noswitch1 w113 d1 H4) as [w1131 [H1131S H1131P]].
+                    rewrite H1131S; simpl.
+                    assert (P d1 w213).
+                      apply (frame3 w21 d1 H21P); unfold r; unfold is_in; rewrite H21Open; left; reflexivity.
+
+                      destruct (noswitch1 w213 d1 H5) as [w2131 [H2131S H2131P]].
+                      rewrite H2131S; simpl.
+                      assert (P d1 w312).
+                        apply (frame3 w31 d1 H31P); unfold r; unfold is_in; rewrite H31Open; left; reflexivity.
+
+                        destruct (noswitch1 w312 d1 H6) as [w3121 [H3121S H3121P]].
+                        rewrite H3121S; simpl.
+                        assert (C d1 w112).
+                          apply (frame2 w11 d1 H0); unfold r; unfold is_in; rewrite H11Open; left; reflexivity.
+
+                          assert (C d1 w1121).
+                            apply (frame5 w112 d1 H7); unfold r; unfold is_in; rewrite H1121S; left; reflexivity.
+
+                            assert (C d1 w113).
+                              apply (frame2 w11 d1 H0); unfold r; unfold is_in; rewrite H11Open; right; left; reflexivity.
+
+                              assert (C d1 w1131).
+                                apply (frame5 w113 d1 H9); unfold r; unfold is_in; rewrite H1131S; left; reflexivity.
+
+                                assert (C d2 w213).
+                                  apply (frame2 w21 d2 H1); unfold r; unfold is_in; rewrite H21Open; left; reflexivity.
+
+                                  assert (C d2 w2131).
+                                    apply (frame5 w213 d2 H12); unfold r; unfold is_in; rewrite H2131S; left; reflexivity.
+
+                                    assert (C d3 w312).
+                                      apply (frame2 w31 d3 H2); unfold r; unfold is_in; rewrite H31Open; left; reflexivity.
+
+                                      assert (C d3 w3121).
+                                        apply (frame5 w312 d3 H14); unfold r; unfold is_in; rewrite H3121S; left; reflexivity.
+
+                                        assert (Vic w1121). apply (victory w1121 d1); [exact H8 | exact H1121P].
+                                        assert (Vic w1131). apply (victory w1131 d1); [exact H10 | exact H1131P].
+                                        assert (~ (Vic w3121)). apply (defeat w3121 d3 d1). exact H15. exact H3121P. unfold mnot. unfold mequal. intro Equal_d3_d1. discriminate Equal_d3_d1.
+                                        assert (~ (Vic w2131)). apply (defeat w2131 d2 d1). exact H13. exact H2131P. unfold mnot. unfold mequal. intro Equal_d2_d1. discriminate Equal_d2_d1.
+                                        destruct (dec Vic w1121). 
+                                          Focus 2. contradiction. 
+
+                                        destruct (dec Vic w1131).
+                                          Focus 2. contradiction.
+
+                                        destruct (dec Vic w2131).
+                                          contradiction. 
+
+                                        destruct (dec Vic w3121).
+                                          contradiction.
+
+                                          reflexivity.
+Qed.
 
 
 Theorem switch_is_better_than_noswitch: [ mexists p_switch, mexists p_noswitch, (At s0 (probPred Vic (cons hide (cons (pick d1) (cons open (cons switch nil) ) ) ) p_switch)) m/\ (At s0 (probPred Vic (cons hide (cons (pick d1) (cons open (cons noswitch nil) ) ) ) p_noswitch)) m/\ (fun w => p_switch > p_noswitch)].
