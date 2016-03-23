@@ -213,8 +213,102 @@ assert (C d1 w11).
 
                                           contradiction.
 
-                                        admit. (* Analogous to previous case *)
-Admitted.
+                                          exfalso; apply D112_113; reflexivity.
+
+(* Analogous to previous case *)
+
+                assert (P d1 w112).
+                  apply (frame3 w11 d1 H11P); unfold r; unfold is_in; rewrite H11Open; left; reflexivity.
+
+                  destruct (switch1 w112 d3 d1 H112O) as [w1123 [H1123S [d3n [D3n_2 [D3n_1 H1123P]]]]].
+                    exact H3.
+
+                    induction d3n.
+                      exfalso; apply D3n_1; reflexivity.
+
+                      Focus 2. exfalso; apply D3n_2; reflexivity.
+
+                      rewrite H1123S; simpl.
+                      assert (P d1 w113).
+                        apply (frame3 w11 d1 H11P); unfold r; unfold is_in; rewrite H11Open; right; left; reflexivity.
+
+                        destruct (switch1 w113 d2 d1 H113O) as [w1132 [H1132S [d2n [D2n_3 [D2n_1 H1132P]]]]].
+                          exact H4.
+
+                          induction d2n.
+                            exfalso; apply D2n_1; reflexivity.
+
+                            exfalso; apply D2n_3; reflexivity.
+
+                            rewrite H1132S; simpl.
+                            assert (P d1 w213).
+                              apply (frame3 w21 d1 H21P); unfold r; unfold is_in; rewrite H21Open; left; reflexivity.
+
+                              destruct (switch1 w213 d3 d1 H213O) as [w2132 [H2132S [d2132 [D2132_3 [D2132_1 H2132P]]]]].
+                                exact H5.
+
+                                induction d2132.
+                                  exfalso; apply D2132_1; reflexivity.
+
+                                  Focus 2. exfalso; apply D2132_3; reflexivity.
+
+                                  rewrite H2132S; simpl.
+                                  assert (P d1 w312).
+                                    apply (frame3 w31 d1 H31P); unfold r; unfold is_in; rewrite H31Open; left; reflexivity.
+
+                                    destruct (switch1 w312 d2 d1 H312O) as [w3123 [H3123S [d3123 [D3123_2 [D3123_1 H3123P]]]]].
+                                      exact H6.
+
+                                      induction d3123.
+                                        exfalso; apply D3123_1; reflexivity.
+
+                                        exfalso; apply D3123_2; reflexivity.
+
+                                        rewrite H3123S; simpl.
+
+                                        assert (C d1 w112).
+                                          apply (frame2 w11 d1 H0); unfold r; unfold is_in; rewrite H11Open; left; reflexivity.
+
+                                          assert (C d1 w1123).
+                                            apply (frame4 w112 d1 H7); unfold r; unfold is_in; rewrite H1123S; left; reflexivity.
+
+                                        assert (C d1 w113).
+                                          apply (frame2 w11 d1 H0); unfold r; unfold is_in; rewrite H11Open; right; left; reflexivity.
+
+                                          assert (C d1 w1132).
+                                            apply (frame4 w113 d1 H9); unfold r; unfold is_in; rewrite H1132S; left; reflexivity.
+
+                                        assert (C d2 w213).
+                                          apply (frame2 w21 d2 H1); unfold r; unfold is_in; rewrite H21Open; left; reflexivity.
+
+                                          assert (C d2 w2132).
+                                            apply (frame4 w213 d2 H12); unfold r; unfold is_in; rewrite H2132S; left; reflexivity.
+
+                                        assert (C d3 w312).
+                                          apply (frame2 w31 d3 H2); unfold r; unfold is_in; rewrite H31Open; left; reflexivity.
+
+                                          assert (C d3 w3123).
+                                            apply (frame4 w312 d3 H14); unfold r; unfold is_in; rewrite H3123S; left; reflexivity.
+
+                                        assert (Vic w3123). apply (victory w3123 d3); [exact H15 | exact H3123P].
+                                        assert (Vic w2132). apply (victory w2132 d2); [exact H13 | exact H2132P].
+                                        assert (~ (Vic w1123)). apply (defeat w1123 d1 d2). exact H8. exact H1123P. unfold mnot. unfold mequal. intro Equal_d3_d1. discriminate Equal_d3_d1.
+                                        assert (~ (Vic w1132)). apply (defeat w1132 d1 d3). exact H10. exact H1132P. unfold mnot. unfold mequal. intro Equal_d2_d1. discriminate Equal_d2_d1.
+                                        destruct (dec Vic w1123). 
+                                          contradiction. 
+
+                                        destruct (dec Vic w1132).
+                                          contradiction.
+
+                                        destruct (dec Vic w2132).
+                                        destruct (dec Vic w3123).
+                                          reflexivity.
+
+                                          contradiction.
+
+                                          contradiction.
+Qed.
+
 
 Lemma prob_without_switch_is_one_third: [ (At s0 (probPred Vic (cons hide (cons (pick d1) (cons open (cons noswitch nil) ) ) ) (1 # 3))) ].
 Proof.
