@@ -8,10 +8,11 @@ Open Scope Q_scope.
 (* Type for individuals *)
 Parameter i: Type.
 
-(* Type for worlds *)
+(* Type for states (a.k.a. worlds) *)
 Parameter W : Type.
 
 (* Type for actions *)
+(* An action is a function that takes a state and returns a list of possible next states. *)
 Definition action := W -> list W.
 
 
@@ -60,7 +61,7 @@ Notation "'mexists' x : t , p" := (E (fun x:t => p))
     format "'[' 'mexists' '/ '  x  :  t , '/ '  p ']'")
   : type_scope.
 
-
+(* Function that computes if an element occurs in a list. *)
 Fixpoint is_in {A: Type} (x: A) (l: list A) := match l with 
   | nil => False
   | (cons h tail) => x = h \/ (is_in x tail)
@@ -105,14 +106,7 @@ Create HintDb modal.
 Hint Unfold mequal mimplies mnot mor mand dia box A E V : modal.
 
 
-(* Probabilistic Operators *)
-
-
-Parameter dec: forall (f: o) (w: W), {f w} + {~ (f w)}.
-
-Parameter decProp: forall f: Prop, {f} + {~f}.
-
-
+(* Convenient Functions *)
 
 Fixpoint map {T1 T2: Type} (f: T1 -> T2) (l: list T1) := match l with 
   | nil => nil
@@ -124,20 +118,26 @@ Fixpoint summation (l: list Q) := match l with
   | (cons head tail) => head + (summation tail)
 end.
 
+Parameter dec: forall (f: o) (w: W), {f w} + {~ (f w)}.
 
+Parameter decProp: forall f: Prop, {f} + {~f}.
+
+
+(* Probabilistic Operators *)
+
+(* Probability function *)
 Fixpoint prob (f: o) (l: list action) (w: W) := match l with
   | nil => if (dec f w) then 1 else 0
   | (cons a tail) => (summation (map (prob f tail) (a w))) / ((Z.of_nat (length (a w) )) # 1 )
 end.
 
-
-
+(* Probability Predicate *)
 Definition probPred (f: o) (l: list action) (value: Q) (w: W) := (prob f l w) == value.
 
 
 
-(* Some useful lemmas *)
 
+(* Some useful lemmas *)
 
 Lemma mp_dia: [mforall p, mforall q, mforall n, (dia n p) m-> (box n (p m-> q)) m-> (dia n q)].
 Proof. mv.
